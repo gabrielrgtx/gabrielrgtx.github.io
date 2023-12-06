@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposta</title>
+  <style>
+    body {
+      text-align: center;
+      padding: 50px;
+      background-image: url('eueaduda.jpg'); /* Substitua 'sua_imagem.jpg' pelo caminho da sua imagem */
+      background-size: 1800px 1200px; /* Cobrir toda a área, mantendo a proporção da imagem */
+      background-position: top;
+      background-repeat: no-repeat;
+      color: white; /* Cor do texto para garantir que seja legível na imagem de fundo */
+    }
+
+    button {
+      color: black; /* Cor do texto nos botões */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Você aceita namorar comigo, Maria Eduarda?</h1>
+
+  <button id="sim" onclick="resposta(true)">Sim</button>
+  <button id="nao" onclick="resposta(false)">Não</button>
+
+  <script>
+    let naoClicado = false;
+
+    function resposta(aceito) {
+      if (aceito) {
+        alert("Ainda bem que você disse sim, odeio fazer cagada e te perder...");
+      } else {
+        if (!naoClicado) {
+          alert("Ah, que pena! Espero que possamos continuar sendo amigos.");
+          document.getElementById('nao').innerText = "Clica aqui de novo...";
+          setTimeout(function() {
+            document.getElementById('nao').innerText = "Não";
+            naoClicado = false;
+          }, 2000);
+          naoClicado = true;
+        } else {
+          alert("Você é teimosa ein?");
+          document.getElementById('nao').innerText = "Você é teimosa ein?";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
