@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proposta</title>
+  <title>Eduarda a mais linda</title>
   <style>
     body {
       text-align: center;
@@ -17,6 +17,12 @@
 
     button {
       color: black; /* Cor do texto nos botões */
+    }
+
+    @media only screen and (max-width: 600px) {
+      body {
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -32,10 +38,10 @@
 
     function resposta(aceito) {
       if (aceito) {
-        alert("Ainda bem que você disse sim, odeio fazer cagada e te perder...");
+        alert("Te amo duda, odeio errar com você... Perdoa o Gabrinho??");
       } else {
         if (!naoClicado) {
-          alert("Ah, que pena! Espero que possamos continuar sendo amigos.");
+          alert("Não tem essa de NÃO, vai namorar comigo sim! Volta lá e coloca sim.");
           document.getElementById('nao').innerText = "Clica aqui de novo...";
           setTimeout(function() {
             document.getElementById('nao').innerText = "Não";
@@ -43,8 +49,11 @@
           }, 2000);
           naoClicado = true;
         } else {
-          alert("Você é teimosa ein?");
           document.getElementById('nao').innerText = "Você é teimosa ein?";
+          setTimeout(function() {
+            document.getElementById('nao').innerText = "Não";
+            naoClicado = false;
+          }, 3000);
         }
       }
     }
